@@ -1,7 +1,7 @@
 import pandas as pd
 #from extract.extract_public_project import extract
 from transform.data_extractor_gcs import data_datalake
-from transform.data_quality_validator import quality_validator
+#from transform.data_quality_validator import quality_validator
 from transform.datos_basicos__cleanup import datos_basicos_cleanup
 from transform.datos_contratos_cleanup import datos_contratos_cleanup
 from transform.models.modeler_proyectos import models_proyecto
@@ -15,7 +15,7 @@ from load.load import load_bigquery
 #Conexión al datalake y extracción de data
 [df_datos_basicos, df_datos_contratos] = data_datalake()
 #Validación de la calidad de datos
-df_datos_basicos = quality_validator(df_datos_basicos)
+#df_datos_basicos = quality_validator(df_datos_basicos)
 #Limpieza de la data
 df_datos_basicos = datos_basicos_cleanup(df_datos_basicos)
 df_datos_contratos = datos_contratos_cleanup(df_datos_contratos)
@@ -23,12 +23,9 @@ df_datos_contratos = datos_contratos_cleanup(df_datos_contratos)
 [dim_proyectos_cer, dim_sector, dim_estado_proyecto, dim_tipo_proyecto, dim_plan, dim_subestado, fact_proyecto] = models_proyecto(df_datos_basicos)
 [dim_tipo_doc, dim_prove, dim_estado_contrato,fact_contratos] = models_contratos(df_datos_contratos)
 
-#json_dim_tipo_doc = dim_tipo_doc.to_json(orient='records')
-#json_dim_prove = dim_prove.to_json(orient='records')
-#json_dim_estado_contrato = dim_estado_contrato.to_json(orient='records')
-#json_fact_contratos = fact_contratos.to_json(orient='records')
-
-load_bigquery(dim_proyectos_cer)
+#Carga de datos a BigQuery
+load_bigquery(dim_proyectos_cer,dim_sector, dim_estado_proyecto, dim_tipo_proyecto, dim_plan, \
+              dim_subestado, fact_proyecto, dim_tipo_doc, dim_prove, dim_estado_contrato,fact_contratos)
 
 
 
