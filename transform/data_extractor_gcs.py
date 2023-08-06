@@ -1,8 +1,11 @@
+####################################################################Importación de librerias
 from google.cloud import storage
 import pandas as pd
 import logging
+import time as time
+import numpy as np
 
-#Configuración del registro de eventos
+######################################################Configuración del registro de eventos
 logging.basicConfig(
     level=logging.INFO,
     format="[%(levelname)s] [%(asctime)s] [%(name)s]: %(message)s",
@@ -11,54 +14,52 @@ logging.basicConfig(
         logging.StreamHandler(),  
         #Salida en archivo local
         logging.FileHandler("transform\logs\extractor.log.txt"), 
-    ]
-)
+    ])
 
-#Manejo de excepciones y logs
-def manejar_excepciones(file_name, exception):
-    #Creación de  un objeto logger para el registro
-    logger = logging.getLogger("Extractor")  
-    logger.error(f"Error en el archivo {file_name}: {exception}")
-    #Subir el log a Cloud Storage
-    log_bucket_name = "logs-public-projects"  
-    log_blob_name = f"extractor.log" 
-    storage_client = storage.Client()
-    log_bucket = storage_client.bucket(log_bucket_name)
-    log_blob = log_bucket.blob(log_blob_name)
-    log_blob.upload_from_string(f"Error en el archivo {file_name}: {exception}")
-
-#Conexión al bucket de Cloud Storage y descarga de los archivo para convertirlo es df
-def donwload_data_datalake(bucket_name, file_name):
+######Conexión al bucket de Cloud Storage y descarga de los archivos para convertirlo es df
+def donwload_data_datalake(bucket_name, blob_name):
     #Creación un objeto logger para el registro
-    logger = logging.getLogger("Extractor") 
+    logger = logging.getLogger("transform_extractor") 
     try:
         #Conexión y solicitud de datos con Cloud Storage
         storage_client = storage.Client()
         bucket = storage_client.get_bucket(bucket_name)
-        blob = bucket.blob(file_name)
+        blob = bucket.blob(blob_name)
         content = blob.download_as_text()
-        logger.info(f"Archivo {file_name} descargado de Cloud Storage con éxito")
+        logger.info(f"Archivo {blob_name} descargado de Cloud Storage con éxito")
         #Creación del Dataframe
         df = pd.read_json(content)
-        logger.info(f"Archivo {file_name} convertido a df")
+        logger.info(f"Archivo {blob_name} convertido a df")
+        return df, True
     #Captura de las excepciones
     except pd.errors.PandasError as e:
-        logger.error(f"Error al convertir el archivo {file_name}: {e}")
-        manejar_excepciones(file_name, e)
+        logger.error(f"Error al convertir el archivo {blob_name}: {e}")
+        return False
     except Exception as e:
-        logger.error(f"Error al descargar el archivo {file_name} de Cloud Storage: {e}")
-        manejar_excepciones(file_name, e)
-    return df
+        logger.error(f"Error en el procesamiento del archivo {blob_name} de Cloud Storage: {e}")
+        return False
+    except storage.exceptions.GoogleCloudError as e:
+        logger.critical(f"Error al descargar el archivo {blob_name} de Cloud Storage: {e}")
+        return False
 
-def data_datalake():
-    #Información de los archivos dentro del bucket
-    bucket_name = 'raw-public-projects'
-    file_name_1 = 'datos_basicos.json'
-    file_name_2 = 'datos_contratos.json'
+###########################################################################Función principal
+def data_datalake(bucket_name, blob_name_1, blob_name_2):
+    t1 = time.time()
     #Creación de DataFrame para su posterior tranformación
-    df_datos_basicos = donwload_data_datalake(bucket_name, file_name_1)
-    df_datos_contratos = donwload_data_datalake(bucket_name, file_name_2)
-    return [df_datos_basicos, df_datos_contratos]
+    df_proyectos, bool_1 = donwload_data_datalake(bucket_name, blob_name_1)
+    columns_proyectos = df_proyectos.columns.values
+    size_proyectos = df_proyectos.shape
+    df_contratos, bool_2 = donwload_data_datalake(bucket_name, blob_name_2)
+    columns_contratos = df_contratos.columns.values
+    size_contratos = df_contratos.shape
+    if bool_1 == True & bool_2 == True:
+        bool == True
+    else:
+        raise Exception("No se pudo correr el codigo")
+    t2 = time.time()
+    t2 = np.round(t2-t1)
+    print(f"Demoré {t2} segundos en extraer desde la GCS")
+    return [df_proyectos, df_contratos,columns_proyectos,size_proyectos,columns_contratos,size_contratos,bool, t2]
 
    
     

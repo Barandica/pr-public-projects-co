@@ -1,0 +1,33 @@
+[ERROR] [2023-08-05 19:04:40,840] [extract_extract]: Error al procesar los datos: 404 Client Error: Not Found for url: https://www.datos.gov.co/resource/cf9k-55fw.jsonn?%24limit=100000&%24offset=0
+[INFO] [2023-08-05 19:05:42,665] [extract_extract]: Se han obtenido correctamente los datos desde la API
+[INFO] [2023-08-05 19:07:33,273] [extract_load]: Archivo proyectos.json cargado en Cloud Storage con éxito
+[INFO] [2023-08-05 19:46:15,869] [transform_extractor]: Archivo proyectos.json descargado de Cloud Storage con éxito
+[INFO] [2023-08-05 19:46:27,263] [transform_extractor]: Archivo proyectos.json convertido a df
+[INFO] [2023-08-05 19:48:58,036] [transform_extractor]: Archivo contratos.json descargado de Cloud Storage con éxito
+[INFO] [2023-08-05 19:49:40,775] [transform_extractor]: Archivo contratos.json convertido a df
+[INFO] [2023-08-05 19:58:51,436] [transform_extractor]: Archivo proyectos.json descargado de Cloud Storage con éxito
+[INFO] [2023-08-05 19:58:58,113] [transform_extractor]: Archivo proyectos.json convertido a df
+[INFO] [2023-08-05 20:01:57,391] [transform_extractor]: Archivo proyectos.json descargado de Cloud Storage con éxito
+[INFO] [2023-08-05 20:02:03,746] [transform_extractor]: Archivo proyectos.json convertido a df
+[INFO] [2023-08-05 20:05:21,218] [transform_extractor]: Archivo proyectos.json descargado de Cloud Storage con éxito
+[INFO] [2023-08-05 20:05:26,830] [transform_extractor]: Archivo proyectos.json convertido a df
+[INFO] [2023-08-05 20:12:07,051] [transform_extractor]: Archivo proyectos.json descargado de Cloud Storage con éxito
+[INFO] [2023-08-05 20:12:12,929] [transform_extractor]: Archivo proyectos.json convertido a df
+[INFO] [2023-08-05 20:17:06,298] [transform_extractor]: Archivo contratos.json descargado de Cloud Storage con éxito
+[INFO] [2023-08-05 20:17:52,276] [transform_extractor]: Archivo contratos.json convertido a df
+[INFO] [2023-08-05 20:23:30,045] [transform_extractor]: Archivo proyectos.json descargado de Cloud Storage con éxito
+[INFO] [2023-08-05 20:23:35,972] [transform_extractor]: Archivo proyectos.json convertido a df
+[INFO] [2023-08-05 20:28:36,102] [transform_extractor]: Archivo contratos.json descargado de Cloud Storage con éxito
+[INFO] [2023-08-05 20:29:24,237] [transform_extractor]: Archivo contratos.json convertido a df
+[INFO] [2023-08-05 20:41:22,076] [transform_extractor]: Archivo proyectos.json descargado de Cloud Storage con éxito
+[INFO] [2023-08-05 20:41:27,810] [transform_extractor]: Archivo proyectos.json convertido a df
+[INFO] [2023-08-05 20:47:22,558] [transform_extractor]: Archivo contratos.json descargado de Cloud Storage con éxito
+[INFO] [2023-08-05 20:48:03,821] [transform_extractor]: Archivo contratos.json convertido a df
+[INFO] [2023-08-05 22:11:58,303] [google.resumable_media._helpers]: No MD5 checksum was returned from the service while downloading https://storage.googleapis.com/download/storage/v1/b/raw-public-projects/o/proyectos.json?alt=media
+(which happens for composite objects), so client-side content integrity
+checking is not being performed.
+[INFO] [2023-08-05 22:11:58,304] [transform_extractor]: Archivo proyectos.json descargado de Cloud Storage con éxito
+[INFO] [2023-08-05 22:14:43,624] [transform_extractor]: Archivo proyectos.json descargado de Cloud Storage con éxito
+[INFO] [2023-08-05 22:14:49,538] [transform_extractor]: Archivo proyectos.json convertido a df
+[INFO] [2023-08-05 22:20:12,978] [transform_extractor]: Archivo contratos.json descargado de Cloud Storage con éxito
+[INFO] [2023-08-05 22:21:00,486] [transform_extractor]: Archivo contratos.json convertido a df

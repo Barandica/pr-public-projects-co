@@ -1,10 +1,14 @@
-#Importación de librerías
+######################################################################Importación de librerías
 import requests
 import logging
 from google.cloud import storage
 import json
+import concurrent.futures
+import pandas as pd
+import time as time
+import numpy as np
 
-#Configuración del registro de eventos
+#########################################################Configuración del registro de eventos
 logging.basicConfig(
     level=logging.INFO,
     format="[%(levelname)s] [%(asctime)s] [%(name)s]: %(message)s",
@@ -12,58 +16,83 @@ logging.basicConfig(
         #Salida en consola
         logging.StreamHandler(), 
         #Salida en archivo local
-        logging.FileHandler("extract\logs\extract_log.txt"), 
-    ]
-)
+        #logging.FileHandler("extract\logs\extract_log.txt"), 
+    ])
 
-#Función que maneja las excepciones
-def manejar_excepciones(api_url, blob_name, exception):
-    #Creación de  un objeto logger para el registro
-    logger = logging.getLogger("Extract")  
-    logger.error(f"Error en la API {api_url}: {exception}")
-    #Subir el log a Cloud Storage
-    log_bucket_name = "logs-public-projects"  
-    log_blob_name = f"extract_error.log" 
-    storage_client = storage.Client()
-    log_bucket = storage_client.bucket(log_bucket_name)
-    log_blob = log_bucket.blob(log_blob_name)
-    log_blob.upload_from_string(f"Error en la API {api_url}: {exception}")
-
-#Función que solicita datos a la API y las sube a Cloud Storage
-def extraer_y_subir_datos(api_url, blob_name):
+#################Función que carga los datos extraidos desde la API hasta Google Cloud Storage
+def cargar_datos(data,blob_name, bucket_name):
     #Creación un objeto logger para el registro
-    logger = logging.getLogger("Extract")  
-
+    logger = logging.getLogger("extract_load")
     try:
-        #Request de datos a la API
-        response = requests.get(api_url)
-        response.raise_for_status()
-        data = response.json()
-        data = json.dumps(data, indent=4)
-        logger.info(f"Se ha obtenido los datos de la API: {api_url}")
         #Carga de datos en el bucket
-        bucket_name = "raw-public-projects"
+        #bucket_name = "raw-public-projects"
         storage_client = storage.Client()
         bucket = storage_client.bucket(bucket_name)
         blob = bucket.blob(blob_name)
         blob.upload_from_string(str(data), content_type="application/json")
         logger.info(f"Archivo {blob_name} cargado en Cloud Storage con éxito")
-        #Manejo de excepciones
-    except requests.exceptions.RequestException as e:
-        manejar_excepciones(api_url, blob_name, e)
-        logger.error(f"Error al cargar el archivo de la API {api_url} en Cloud Storage: {e}")
+        return True
+    except storage.exceptions.GoogleCloudError as e:
+        logger.critical(f"Error al cargar el archivo {blob_name} en Cloud Storage: {e}")
+        return False
     except Exception as e:
-        logger.error(f"Error al cargar el archivo de la API {api_url} en Cloud Storage: {e}")
-        manejar_excepciones(api_url, blob_name, e)
+        logger.error(f"Error en el procesamiento de carga en Cloud Storage {e}")
+        return False
+
+#######################################################Función que solicita los datos a la API
+def extraer_datos(api_url, page_size=1000):
+    #Creación un objeto logger para el registro
+    logger = logging.getLogger("extract_extract")
+    try:
+        #Creamos una lista donde agregaremos la data de las distintas páginas que vayamos solicitando de la API
+        data = []
+        page = 1
+
+        #Solicitud de datos por páginas y en paralelo
+        while True:
+            params = {'$limit': page_size, '$offset': (page - 1) * page_size}
+            response = requests.get(api_url, params=params)
+            response.raise_for_status()
+            page_data = response.json()
+            #if not page_data:
+            if len(data) >= 1000:
+                break  # Si no hay más datos, sal del bucle
+            #Agregamos la data en la lista
+            data.extend(page_data)
+            page += 1
+        #Creamos un df
+        df = pd.DataFrame(data)
+        columns = df.columns.values
+        size = df.shape
+        #Creamos un .JSON para subir al GCS 
+        data = json.dumps(data, indent=4)        
+        logger.info("Se han obtenido correctamente los datos desde la API")
+        return data, columns, size
+        #Manejo de excepciones
+    except json.JSONDecodeError as e:
+        logger.critical(f"Error al solicitar los datos: {e}")
+    except Exception as e:
+        logger.error(f"Error al procesar los datos: {e}")
+
     
-#Función principal que ejecuta la anterior función
-def extract():
-    #datos_basicos
-    api_url_1 = "https://www.datos.gov.co/resource/cf9k-55fw.json"
-    blob_name_1 = "datos_basicos.json"
-    extraer_y_subir_datos(api_url_1, blob_name_1)
-    #datos_contratos
-    api_url_2 = "https://www.datos.gov.co/resource/uwns-mbwd.json"  
-    blob_name_2 = "datos_contratos.json"  
-    extraer_y_subir_datos(api_url_2, blob_name_2)
-    return
+
+##########################################################################Función principal
+def extraer_subir_datos_gcs(bucket_name, blob_name_1, blob_name_2, api_url_1, api_url_2):
+    t1 = time.time()
+    #Request de datos con paralelismo
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        future_1 = executor.submit(extraer_datos, api_url_1)
+        future_2 = executor.submit(extraer_datos, api_url_2)
+    data_proyectos, columns_proyectos, size_proyectos = future_1.result()
+    data_contratos, columns_contratos, size_contratos = future_2.result()
+    #Subir datos a Google Cloud Storage
+    bool_1 = cargar_datos(data_proyectos,blob_name_1, bucket_name)
+    bool_2 = cargar_datos(data_contratos,blob_name_2, bucket_name)
+    if bool_1 == True & bool_2 == True:
+        bool == True
+    else:
+        raise Exception("No se pudo correr el codigo")
+    t2 = time.time()
+    t2 = np.round(t2-t1)
+    print(f"Demoré {t2} segundos en extraer desde la API")
+    return [columns_proyectos, size_proyectos, columns_contratos, size_contratos, bool, t2]
