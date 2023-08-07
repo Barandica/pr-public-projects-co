@@ -13,7 +13,7 @@ logging.basicConfig(
         #Salida en consola
         logging.StreamHandler(), 
         #Salida en archivo local
-        logging.FileHandler("transform\logs\modeler_proyectos.log.txt"),  
+        logging.FileHandler("load\logs\load.txt"),  
     ])
 
 ########################################Crea la conexion a BigQuery y carga las tablas allí

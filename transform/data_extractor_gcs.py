@@ -13,7 +13,7 @@ logging.basicConfig(
         #Salida en consola
         logging.StreamHandler(),  
         #Salida en archivo local
-        logging.FileHandler("transform\logs\extractor.log.txt"), 
+        logging.FileHandler("transform\logs\extractor_log.txt"), 
     ])
 
 ######Conexión al bucket de Cloud Storage y descarga de los archivos para convertirlo es df

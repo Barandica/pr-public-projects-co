@@ -12,7 +12,7 @@ logging.basicConfig(
         #Salida en consola
         logging.StreamHandler(), 
         #Salida en archivo local
-        logging.FileHandler("transform\logs\clean_datos_contratos.log.txt"),  
+        logging.FileHandler("transform\logs\clean_datos_contratos_log.txt"),  
     ])
 
 def reemplazar_estado(estado):

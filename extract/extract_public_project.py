@@ -16,7 +16,7 @@ logging.basicConfig(
         #Salida en consola
         logging.StreamHandler(), 
         #Salida en archivo local
-        #logging.FileHandler("extract\logs\extract_log.txt"), 
+        logging.FileHandler("extract\logs\extract_log.txt"), 
     ])
 
 #################Función que carga los datos extraidos desde la API hasta Google Cloud Storage

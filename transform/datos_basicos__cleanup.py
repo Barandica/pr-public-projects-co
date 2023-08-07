@@ -12,7 +12,7 @@ logging.basicConfig(
         #Salida en consola
         logging.StreamHandler(), 
         #Salida en archivo local
-        logging.FileHandler("transform\logs\clean_datos_basicos.log.txt"),  
+        logging.FileHandler("transform\logs\clean_datos_basicos_log.txt"),  
     ])
 
 ######################################################################Limpieza de los datos
