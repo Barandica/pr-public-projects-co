@@ -54,8 +54,8 @@ def extraer_datos(api_url, page_size=1000):
             response = requests.get(api_url, params=params)
             response.raise_for_status()
             page_data = response.json()
-            #if not page_data:
-            if len(data) >= 1000:
+            if not page_data:
+            #if len(data) >= 1000:
                 break  # Si no hay más datos, sal del bucle
             #Agregamos la data en la lista
             data.extend(page_data)

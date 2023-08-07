@@ -54,17 +54,15 @@ def cleanup(df):
         df_columns = [col for col in df if col in columns]    
         # Creamos un nuevo DataFrame con las columnas seleccionadas
         df = df[df_columns]
-        #Cambiar el tipo de dato de nuestras columnas
-        df = df.astype(columns)
         #Agrupar nulos
         valores_atipicos = ["Sin Dato", "No Definido", "Sin Descripcion"]
         df['tipodocproveedor'] = df['tipodocproveedor'].replace(valores_atipicos, "No definido")   
         #Registros nulos documentoproveedor
+        df = df.dropna(subset=['documentoproveedor'])
+        df = df[~df['documentoproveedor'].str.match(r'^[a-zA-Z]+$')]
         df_docproveedor = df[df['documentoproveedor'].isnull()]  
         registros_solo_letras = df[df['documentoproveedor'].str.match(r'^[a-zA-Z]+$')]
         df_inconsistencias = pd.concat([df_docproveedor, registros_solo_letras], ignore_index=True)
-        df = df.dropna(subset=['documentoproveedor'])
-        df = df[~df['documentoproveedor'].str.match(r'^[a-zA-Z]+$')]
         #Registros nulos vigencia_contrato
         df_vigencia_contrato = df[df['vigenciacontrato'].isnull()]  
         df_inconsistencias = pd.concat([df_inconsistencias, df_vigencia_contrato], ignore_index=True)
@@ -75,6 +73,8 @@ def cleanup(df):
         df = df[df['valorcontrato'] >= 0]
         #Agrupacion de los estados
         df['estadocontrato'] = df['estadocontrato'].apply(reemplazar_estado) 
+        #Cambiar el tipo de dato de nuestras columnas
+        df = df.astype(columns)
         logger.info(f"El archivo se ha limpiado con éxito")
         return df, df_inconsistencias, True
     except pd.errors.PandasError as e:
