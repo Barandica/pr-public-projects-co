@@ -12,7 +12,7 @@ logging.basicConfig(
         #Salida en consola
         logging.StreamHandler(), 
         #Salida en archivo local
-        logging.FileHandler("transform\logs\modeler_proyectos.log.txt"),  
+        logging.FileHandler("transform\logs\modeler_proyectos.txt"),  
     ])
 
 #####################################################Función que construye las dimensiones 

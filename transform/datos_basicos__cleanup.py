@@ -50,8 +50,7 @@ def cleanup(df):
             'T': 'TERRITORIAL',
             'SGR': 'SISTEMA GENERAL DE REGALIAS'}
         # Combinar los registros de la columna usando el diccionario
-        df['tipoproyecto'] = df['tipoproyecto'].str.strip().str.upper().replace(combinaciones)
-        #df.loc[:, 'estadoproyecto'] = df['estadoproyecto'].replace(combinaciones) 
+        df.loc[:, 'tipoproyecto'] = df['tipoproyecto'].replace(combinaciones) 
         #Separar los años de la columna horizonte
         df[["ano_ini", "ano_fin"]] = df["horizonte"].str.extract(r"(\d+)-(\d+)")
         #Cambiar el tipo de dato de nuestras columnas

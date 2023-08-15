@@ -98,6 +98,7 @@ if __name__ == "__main__":
     t2_l = carga_data_bigquery(dataset, dim_proyectos_cer,dim_sector, dim_estado_proyecto, dim_tipo_proyecto,dim_subestado, dim_proyectos,\
             dim_tipo_doc, dim_prove, dim_estado_contrato,fact_contratos,bool_mp,bool_mc,df_inconsistencias_pr, df_inconsistencias_ct)
 
+
     print(f"Demore {np.round((t2_e + t2_t + t2_c + t2_pr + t2_ct + t2_mp + t2_mc + t2_l) / 60)} minutos en correr toda la tubería")
 
 
