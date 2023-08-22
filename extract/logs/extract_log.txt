@@ -1,101 +1,0 @@
-[ERROR] [2023-08-05 19:04:40,840] [extract_extract]: Error al procesar los datos: 404 Client Error: Not Found for url: https://www.datos.gov.co/resource/cf9k-55fw.jsonn?%24limit=100000&%24offset=0
-[INFO] [2023-08-05 19:05:42,665] [extract_extract]: Se han obtenido correctamente los datos desde la API
-[INFO] [2023-08-05 19:07:33,273] [extract_load]: Archivo proyectos.json cargado en Cloud Storage con éxito
-[INFO] [2023-08-05 19:46:15,869] [transform_extractor]: Archivo proyectos.json descargado de Cloud Storage con éxito
-[INFO] [2023-08-05 19:46:27,263] [transform_extractor]: Archivo proyectos.json convertido a df
-[INFO] [2023-08-05 19:48:58,036] [transform_extractor]: Archivo contratos.json descargado de Cloud Storage con éxito
-[INFO] [2023-08-05 19:49:40,775] [transform_extractor]: Archivo contratos.json convertido a df
-[INFO] [2023-08-05 19:58:51,436] [transform_extractor]: Archivo proyectos.json descargado de Cloud Storage con éxito
-[INFO] [2023-08-05 19:58:58,113] [transform_extractor]: Archivo proyectos.json convertido a df
-[INFO] [2023-08-05 20:01:57,391] [transform_extractor]: Archivo proyectos.json descargado de Cloud Storage con éxito
-[INFO] [2023-08-05 20:02:03,746] [transform_extractor]: Archivo proyectos.json convertido a df
-[INFO] [2023-08-05 20:05:21,218] [transform_extractor]: Archivo proyectos.json descargado de Cloud Storage con éxito
-[INFO] [2023-08-05 20:05:26,830] [transform_extractor]: Archivo proyectos.json convertido a df
-[INFO] [2023-08-05 20:12:07,051] [transform_extractor]: Archivo proyectos.json descargado de Cloud Storage con éxito
-[INFO] [2023-08-05 20:12:12,929] [transform_extractor]: Archivo proyectos.json convertido a df
-[INFO] [2023-08-05 20:17:06,298] [transform_extractor]: Archivo contratos.json descargado de Cloud Storage con éxito
-[INFO] [2023-08-05 20:17:52,276] [transform_extractor]: Archivo contratos.json convertido a df
-[INFO] [2023-08-05 20:23:30,045] [transform_extractor]: Archivo proyectos.json descargado de Cloud Storage con éxito
-[INFO] [2023-08-05 20:23:35,972] [transform_extractor]: Archivo proyectos.json convertido a df
-[INFO] [2023-08-05 20:28:36,102] [transform_extractor]: Archivo contratos.json descargado de Cloud Storage con éxito
-[INFO] [2023-08-05 20:29:24,237] [transform_extractor]: Archivo contratos.json convertido a df
-[INFO] [2023-08-05 20:41:22,076] [transform_extractor]: Archivo proyectos.json descargado de Cloud Storage con éxito
-[INFO] [2023-08-05 20:41:27,810] [transform_extractor]: Archivo proyectos.json convertido a df
-[INFO] [2023-08-05 20:47:22,558] [transform_extractor]: Archivo contratos.json descargado de Cloud Storage con éxito
-[INFO] [2023-08-05 20:48:03,821] [transform_extractor]: Archivo contratos.json convertido a df
-[INFO] [2023-08-05 22:11:58,303] [google.resumable_media._helpers]: No MD5 checksum was returned from the service while downloading https://storage.googleapis.com/download/storage/v1/b/raw-public-projects/o/proyectos.json?alt=media
-(which happens for composite objects), so client-side content integrity
-checking is not being performed.
-[INFO] [2023-08-05 22:11:58,304] [transform_extractor]: Archivo proyectos.json descargado de Cloud Storage con éxito
-[INFO] [2023-08-05 22:14:43,624] [transform_extractor]: Archivo proyectos.json descargado de Cloud Storage con éxito
-[INFO] [2023-08-05 22:14:49,538] [transform_extractor]: Archivo proyectos.json convertido a df
-[INFO] [2023-08-05 22:20:12,978] [transform_extractor]: Archivo contratos.json descargado de Cloud Storage con éxito
-[INFO] [2023-08-05 22:21:00,486] [transform_extractor]: Archivo contratos.json convertido a df
-[INFO] [2023-08-07 07:36:29,178] [transform_extractor]: Archivo proyectos.json descargado de Cloud Storage con éxito
-[INFO] [2023-08-07 07:36:46,609] [transform_extractor]: Archivo proyectos.json convertido a df
-[INFO] [2023-08-07 07:39:25,437] [transform_extractor]: Archivo contratos.json descargado de Cloud Storage con éxito
-[INFO] [2023-08-07 07:41:14,981] [transform_extractor]: Archivo contratos.json convertido a df
-[INFO] [2023-08-07 07:41:23,464] [CleanUp1]: El archivo se ha limpiado con éxito
-[INFO] [2023-08-07 07:41:32,375] [CleanUp2]: El archivo se ha limpiado con éxito
-[INFO] [2023-08-07 07:41:35,604] [modeler_subdimensiones_proyectos]: Se han construido las dimensiones de los proyectos con éxito
-[INFO] [2023-08-07 07:41:35,901] [modeler_dimension_proyectos]: Se ha construido la tablas dim_proyectos
-[INFO] [2023-08-07 07:41:38,058] [modeler_dimensiones_contratos]: Se han construido las dimensiones de los contratos con éxito
-[INFO] [2023-08-07 07:41:38,388] [modeler_fact_contratos]: Se ha construido la tablas fact_contratos
-[INFO] [2023-08-07 07:41:47,616] [pandas_gbq.gbq]: 3763 out of 3763 rows loaded.
-[INFO] [2023-08-07 07:41:47,616] [load_BigQuery]: Datos de la tabla dim_pr_entidades cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:41:54,381] [pandas_gbq.gbq]: 29 out of 29 rows loaded.
-[INFO] [2023-08-07 07:41:54,381] [load_BigQuery]: Datos de la tabla dim_pr_sector cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:42:01,287] [pandas_gbq.gbq]: 8 out of 8 rows loaded.
-[INFO] [2023-08-07 07:42:01,287] [load_BigQuery]: Datos de la tabla dim_pr_estado cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:42:07,173] [pandas_gbq.gbq]: 3 out of 3 rows loaded.
-[INFO] [2023-08-07 07:42:07,173] [load_BigQuery]: Datos de la tabla dim_pr_tipo cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:42:13,323] [pandas_gbq.gbq]: 22 out of 22 rows loaded.
-[INFO] [2023-08-07 07:42:13,323] [load_BigQuery]: Datos de la tabla dim_pr_subestado cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:42:46,698] [pandas_gbq.gbq]: 304862 out of 304862 rows loaded.
-[INFO] [2023-08-07 07:42:46,698] [load_BigQuery]: Datos de la tabla dim_pr_proyecto cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:42:53,354] [pandas_gbq.gbq]: 15 out of 15 rows loaded.
-[INFO] [2023-08-07 07:42:53,354] [load_BigQuery]: Datos de la tabla dim_ct_tipo_doc cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:43:11,485] [pandas_gbq.gbq]: 452907 out of 452907 rows loaded.
-[INFO] [2023-08-07 07:43:11,485] [load_BigQuery]: Datos de la tabla dim_ct_proveedor cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:43:16,813] [pandas_gbq.gbq]: 10 out of 10 rows loaded.
-[INFO] [2023-08-07 07:43:16,813] [load_BigQuery]: Datos de la tabla dim_ct_estado cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:44:32,792] [pandas_gbq.gbq]: 1148855 out of 1148855 rows loaded.
-[INFO] [2023-08-07 07:44:32,792] [load_BigQuery]: Datos de la tabla fact_contratos cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:44:48,596] [pandas_gbq.gbq]: 63868 out of 63868 rows loaded.
-[INFO] [2023-08-07 07:44:48,596] [load_BigQuery]: Datos de la tabla errores_proyectos cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:44:53,777] [pandas_gbq.gbq]: 11 out of 11 rows loaded.
-[INFO] [2023-08-07 07:44:53,777] [load_BigQuery]: Datos de la tabla errores_contratos cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:51:50,770] [transform_extractor]: Archivo proyectos.json descargado de Cloud Storage con éxito
-[INFO] [2023-08-07 07:51:59,501] [transform_extractor]: Archivo proyectos.json convertido a df
-[INFO] [2023-08-07 07:54:51,944] [transform_extractor]: Archivo contratos.json descargado de Cloud Storage con éxito
-[INFO] [2023-08-07 07:55:50,579] [transform_extractor]: Archivo contratos.json convertido a df
-[INFO] [2023-08-07 07:56:00,314] [CleanUp1]: El archivo se ha limpiado con éxito
-[INFO] [2023-08-07 07:56:08,125] [CleanUp2]: El archivo se ha limpiado con éxito
-[INFO] [2023-08-07 07:56:09,224] [modeler_subdimensiones_proyectos]: Se han construido las dimensiones de los proyectos con éxito
-[INFO] [2023-08-07 07:56:09,405] [modeler_dimension_proyectos]: Se ha construido la tablas dim_proyectos
-[INFO] [2023-08-07 07:56:10,432] [modeler_dimensiones_contratos]: Se han construido las dimensiones de los contratos con éxito
-[INFO] [2023-08-07 07:56:10,654] [modeler_fact_contratos]: Se ha construido la tablas fact_contratos
-[INFO] [2023-08-07 07:56:16,672] [pandas_gbq.gbq]: 3763 out of 3763 rows loaded.
-[INFO] [2023-08-07 07:56:16,672] [load_BigQuery]: Datos de la tabla dim_pr_entidades cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:56:21,608] [pandas_gbq.gbq]: 29 out of 29 rows loaded.
-[INFO] [2023-08-07 07:56:21,609] [load_BigQuery]: Datos de la tabla dim_pr_sector cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:56:27,260] [pandas_gbq.gbq]: 8 out of 8 rows loaded.
-[INFO] [2023-08-07 07:56:27,260] [load_BigQuery]: Datos de la tabla dim_pr_estado cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:56:33,313] [pandas_gbq.gbq]: 3 out of 3 rows loaded.
-[INFO] [2023-08-07 07:56:33,313] [load_BigQuery]: Datos de la tabla dim_pr_tipo cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:56:38,245] [pandas_gbq.gbq]: 22 out of 22 rows loaded.
-[INFO] [2023-08-07 07:56:38,245] [load_BigQuery]: Datos de la tabla dim_pr_subestado cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:57:13,432] [pandas_gbq.gbq]: 304862 out of 304862 rows loaded.
-[INFO] [2023-08-07 07:57:13,432] [load_BigQuery]: Datos de la tabla dim_pr_proyecto cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:57:18,448] [pandas_gbq.gbq]: 15 out of 15 rows loaded.
-[INFO] [2023-08-07 07:57:18,448] [load_BigQuery]: Datos de la tabla dim_ct_tipo_doc cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:57:34,297] [pandas_gbq.gbq]: 452907 out of 452907 rows loaded.
-[INFO] [2023-08-07 07:57:34,297] [load_BigQuery]: Datos de la tabla dim_ct_proveedor cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:57:40,252] [pandas_gbq.gbq]: 10 out of 10 rows loaded.
-[INFO] [2023-08-07 07:57:40,252] [load_BigQuery]: Datos de la tabla dim_ct_estado cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:58:52,927] [pandas_gbq.gbq]: 1148855 out of 1148855 rows loaded.
-[INFO] [2023-08-07 07:58:52,950] [load_BigQuery]: Datos de la tabla fact_contratos cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:59:06,261] [pandas_gbq.gbq]: 63868 out of 63868 rows loaded.
-[INFO] [2023-08-07 07:59:06,261] [load_BigQuery]: Datos de la tabla errores_proyectos cargados correctamente en BigQuery
-[INFO] [2023-08-07 07:59:12,105] [pandas_gbq.gbq]: 11 out of 11 rows loaded.
-[INFO] [2023-08-07 07:59:12,105] [load_BigQuery]: Datos de la tabla errores_contratos cargados correctamente en BigQuery

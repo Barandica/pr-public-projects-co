@@ -4,17 +4,14 @@ import logging
 import numpy as np
 import time as time
 
-#Configuración del registro de eventos
-logging.basicConfig(
-    level=logging.INFO,
-    format="[%(levelname)s] [%(asctime)s] [%(name)s]: %(message)s",
-    handlers=[
-        #Salida en consola
-        logging.StreamHandler(), 
-        #Salida en archivo local
-        logging.FileHandler("transform\logs\clean_datos_contratos_log.txt"),  
-    ])
+######################################################Configuración del registro de eventos
+logger = logging.getLogger("clean_up_df_contratos")
+file_handler = logging.FileHandler("logs_main_py.txt")
+file_handler.setFormatter(logging.Formatter("[%(levelname)s] [%(asctime)s] [%(name)s]: %(message)s"))
+logger.addHandler(file_handler)
+logging.StreamHandler()
 
+#########################################Reemplazamos los datos de la columna estadocontrato
 def reemplazar_estado(estado):
     estados_proyecto = {
             'EN EJECUCION': ['En ejecución', 'Activo', 'Convocado', 'Adjudicado', 'En aprobación', 'Celebrado'],
@@ -34,9 +31,7 @@ def reemplazar_estado(estado):
     return estado
 
 #######################################################################Limpieza de los datos
-def cleanup(df):
-    #Creación de  un objeto logger para el registro
-    logger = logging.getLogger("CleanUp2")  
+def cleanup(df):  
     try:
         #Columnas de nuestro df y el tipo de dato nuevo
         columns = {
@@ -53,41 +48,48 @@ def cleanup(df):
         # Filtramos las columnas que están presentes en el diccionario
         df_columns = [col for col in df if col in columns]    
         # Creamos un nuevo DataFrame con las columnas seleccionadas
-        df = df[df_columns]
-        #Agrupar nulos
-        valores_atipicos = ["Sin Dato", "No Definido", "Sin Descripcion"]
-        df['tipodocproveedor'] = df['tipodocproveedor'].replace(valores_atipicos, "No definido")   
+        df = df[df_columns]  
         #Registros nulos documentoproveedor
-        df = df.dropna(subset=['documentoproveedor'])
-        df = df[~df['documentoproveedor'].str.match(r'^[a-zA-Z]+$')]
         df_docproveedor = df[df['documentoproveedor'].isnull()]  
+        df = df.dropna(subset=['documentoproveedor'])
         registros_solo_letras = df[df['documentoproveedor'].str.match(r'^[a-zA-Z]+$')]
         df_inconsistencias = pd.concat([df_docproveedor, registros_solo_letras], ignore_index=True)
+        df = df[~df['documentoproveedor'].str.match(r'^[a-zA-Z]+$')]
+        #Agrupar nulos
+        valores_atipicos = ["Sin Dato", "No Definido", "Sin Descripcion"] 
+        df.loc[df['tipodocproveedor'].isin(valores_atipicos), 'tipodocproveedor'] = "No definido"
         #Registros nulos vigencia_contrato
         df_vigencia_contrato = df[df['vigenciacontrato'].isnull()]  
         df_inconsistencias = pd.concat([df_inconsistencias, df_vigencia_contrato], ignore_index=True)
         df = df.dropna(subset=['vigenciacontrato'])
         #Valores negativos
+        df['valorcontrato'] = pd.to_numeric(df['valorcontrato'], errors='coerce')
+        valores_nulos = df[df['documentoproveedor'].isnull()]
+        df_inconsistencias = pd.concat([df_inconsistencias, valores_nulos], ignore_index=True)
+        df = df.dropna(subset=['valorcontrato'])
         valores_negativos = df[df['valorcontrato'] < 0]
         df_inconsistencias = pd.concat([df_inconsistencias, valores_negativos], ignore_index=True)
         df = df[df['valorcontrato'] >= 0]
         #Agrupacion de los estados
+        sin_estado = df[df['estadocontrato'].isnull()] 
+        df_inconsistencias = pd.concat([df_inconsistencias, sin_estado], ignore_index=True)
+        df = df.dropna(subset=['estadocontrato'])
         df['estadocontrato'] = df['estadocontrato'].apply(reemplazar_estado) 
+        df['proveedor'] = df['proveedor'].fillna('Sin nombre') 
         #Cambiar el tipo de dato de nuestras columnas
         df = df.astype(columns)
-        logger.info(f"El archivo se ha limpiado con éxito")
-        return df, df_inconsistencias, True
-    except pd.errors.PandasError as e:
-        logger.error(f"Error al limpiar el df: {e}")
+        logger.info("El archivo df_contratos se ha limpiado con éxito")
+        return df, df_inconsistencias
     except Exception as e:
-        logger.error(f"Error al limpiar el df: {e}")
+        logger.error(f"Error al limpiar el df_contratos: {e}")
 
 ###########################################################################Función principal
 def main_contratos_cleanup(df):
     t1 = time.time()
     #Limpiamos la data
-    df, df_inconsistencias, bool = cleanup(df)
+    df, df_inconsistencias = cleanup(df)
+    #Registro de tiempo
     t2 = time.time()
     t2 = np.round(t2-t1)
-    print(f"Demoré {t2} segundos en limpiar el df_contratos")
-    return df, df_inconsistencias, bool, t2
+    logger.info(f"Demoré {t2} segundos en limpiar el df_contratos")
+    return df, df_inconsistencias, t2

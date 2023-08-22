@@ -5,20 +5,14 @@ import numpy as np
 import time as time
 
 ######################################################Configuración del registro de eventos
-logging.basicConfig(
-    level=logging.INFO,
-    format="[%(levelname)s] [%(asctime)s] [%(name)s]: %(message)s",
-    handlers=[
-        #Salida en consola
-        logging.StreamHandler(), 
-        #Salida en archivo local
-        logging.FileHandler("transform\logs\clean_datos_basicos_log.txt"),  
-    ])
+logger = logging.getLogger("clean_up_df_proyectos")
+file_handler = logging.FileHandler("logs_main_py.txt")
+file_handler.setFormatter(logging.Formatter("[%(levelname)s] [%(asctime)s] [%(name)s]: %(message)s"))
+logger.addHandler(file_handler)
+logging.StreamHandler()
 
 ######################################################################Limpieza de los datos
-def cleanup(df):
-    #Creación de  un objeto logger para el registro
-    logger = logging.getLogger("CleanUp1")  
+def cleanup(df):  
     try:
         #Columnas de nuestro df y el tipo de dato nuevo
         columns = {
@@ -62,21 +56,21 @@ def cleanup(df):
         null_df = df[df['codigoentidadresponsable'].isnull()]
         df_inconsistencias = pd.concat([df_inconsistencias, null_df], ignore_index=True)
         df = df.dropna(subset=['codigoentidadresponsable'])          
-        logger.info(f"El archivo se ha limpiado con éxito")
-        return df, df_inconsistencias, True
-    except pd.errors.PandasError as e:
-        logger.error(f"Error al limpiar el df: {e}")
+        logger.info("El archivo df_contratos se ha limpiado con éxito")
+        return df, df_inconsistencias
     except Exception as e:
-        logger.error(f"Error al limpiar el df: {e}")
+        logger.error(f"Error al limpiar el df_contratos: {e}")
 
 ###########################################################################Función principal
 def main_proyectos_cleanup(df):
     t1 = time.time()
+    #print(f"Dimension de df_proyectos entrante: {df_proyectos.shape}")
     #Mayusculas en la columna estadoproyecto
     df.loc[:, 'estadoproyecto'] = df['estadoproyecto'].str.upper() 
     #Limpiamos la data
-    df, df_inconsistencias, bool = cleanup(df)
+    df, df_inconsistencias = cleanup(df)
+    #Registro de tiempo
     t2 = time.time()
     t2 = np.round(t2-t1)
-    print(f"Demoré {t2} segundos en limpiar el df_proyectos")
-    return df, df_inconsistencias, bool, t2
+    logger.info(f"Demoré {t2} segundos en limpiar el df_proyectos")
+    return df, df_inconsistencias, t2
