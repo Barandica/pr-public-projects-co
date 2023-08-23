@@ -33,7 +33,7 @@ def cargar_datos(data,blob_name, bucket_name):
         storage_client.close()
 
 #######################################################Función que solicita los datos a la API
-def extraer_datos(api_url, page_size=1000):
+def extraer_datos(api_url, page_size=100000):
     try:
         #Creamos una lista donde agregaremos la data de las distintas páginas que vayamos solicitando de la API
         data = []
@@ -45,8 +45,8 @@ def extraer_datos(api_url, page_size=1000):
             response = requests.get(api_url, params=params)
             response.raise_for_status()
             page_data = response.json()
-            #if not page_data:
-            if len(data) >= 1000:
+            if not page_data:
+            #if len(data) >= 1000:
                 break  # Si no hay más datos, sal del bucle
             #Agregamos la data en la lista
             data.extend(page_data)

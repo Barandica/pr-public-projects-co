@@ -1,6 +1,7 @@
 ####################################################################Importación de librerias
 import pandas as pd
 from google.cloud import bigquery
+from google.api_core.exceptions import GoogleAPIError
 import logging
 import numpy as np
 import time as time
@@ -27,10 +28,10 @@ def cargar_datos_en_bigquery(dataframe,  dataset, tabla):
         #Carga el DataFrame en BigQuery
         dataframe.to_gbq(destination_table=full_table_name, project_id=client.project, if_exists='replace')
         logger.info(f"Datos de la tabla {tabla} cargados correctamente en BigQuery")
-    except bigquery.exceptions.GoogleCloudError as e:
+    except GoogleAPIError as e:
         logger.critical(f"Error al crear la conexión con BigQuery: {e}")
     except Exception as e:
-        logger.error(f"Error al cargar los datos a BigQuery: {e}")
+        logger.error(f"Error al cargar la tabla {tabla} a BigQuery: {e}")
     finally:
         #Cierra la conexión a BigQuery
         client.close()

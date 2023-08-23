@@ -49,6 +49,8 @@ def limpieza_data(df_proyectos_e, df_contratos_e, bool_c):
         #Limpieza de los datos
         df_proyectos, df_inconsistencias_pr, t2_pr = main_proyectos_cleanup(df_proyectos_e)
         df_contratos, df_inconsistencias_ct, t2_ct = main_contratos_cleanup(df_contratos_e)
+        df_inconsistencias_pr = df_inconsistencias_pr.astype(str)
+        df_inconsistencias_ct = df_inconsistencias_ct.astype(str)
         #Validacion de integridad luego de la limpieza
         registros_salientes_pr = df_proyectos.shape[0] + df_inconsistencias_pr.shape[0]
         registros_salientes_ct = df_contratos.shape[0] + df_inconsistencias_ct.shape[0]
@@ -70,13 +72,6 @@ def modelacion_data(df_proyectos,df_contratos,bool_cl):
         return [dim_proyectos_cer, dim_sector, dim_estado_proyecto, dim_tipo_proyecto, dim_subestado, dim_proyectos, t2_mp,dim_tipo_doc, dim_prove, dim_estado_contrato,fact_contratos, t2_mc]
     else:
         logger.critical("Después de la limpieza, los datos NO mantienen su integridad por tanto, NO se crea el modelo")
-
-########################################################################Carga del modelo a BigQuery
-def carga_data_bigquery(dataset, dim_proyectos_cer,dim_sector, dim_estado_proyecto, dim_tipo_proyecto,dim_subestado, dim_proyectos,\
-        dim_tipo_doc, dim_prove, dim_estado_contrato,fact_contratos, df_inconsistencias_pr, df_inconsistencias_ct):    
-    t2_l = load_bigquery (dataset, dim_proyectos_cer,dim_sector, dim_estado_proyecto, dim_tipo_proyecto,dim_subestado, dim_proyectos,\
-            dim_tipo_doc, dim_prove, dim_estado_contrato,fact_contratos, df_inconsistencias_pr, df_inconsistencias_ct)
-    return t2_l
 
 ##################################################################################Funcion principal
 if __name__ == "__main__":
@@ -104,16 +99,15 @@ if __name__ == "__main__":
 
     #4. Limpieza de los datos
     [df_proyectos, df_inconsistencias_pr, t2_pr,df_contratos, df_inconsistencias_ct, t2_ct, bool_cl] = \
-            limpieza_data(df_proyectos, df_contratos,bool_c=True)
+            limpieza_data(df_proyectos, df_contratos,bool_c = True)
     
-    #5.Modelado de datos
+   #5.Modelado de datos
     [dim_proyectos_cer, dim_sector, dim_estado_proyecto, dim_tipo_proyecto, dim_subestado, dim_proyectos, t2_mp,dim_tipo_doc, \
             dim_prove, dim_estado_contrato,fact_contratos, t2_mc] = modelacion_data(df_proyectos,df_contratos,bool_cl)
     
     #6. Carga de datos a BigQuery
-    t2_l = carga_data_bigquery(dataset, dim_proyectos_cer,dim_sector, dim_estado_proyecto, dim_tipo_proyecto,dim_subestado, dim_proyectos,\
+    t2_l = load_bigquery(dataset, dim_proyectos_cer,dim_sector, dim_estado_proyecto, dim_tipo_proyecto,dim_subestado, dim_proyectos,\
             dim_tipo_doc, dim_prove, dim_estado_contrato,fact_contratos, df_inconsistencias_pr, df_inconsistencias_ct)
-
 
     logger.info(f"Demore {np.round((t2_e + t2_t + t2_c + t2_pr + t2_ct + t2_mp + t2_mc + t2_l) / 60)} minutos en correr toda la tubería")
 
