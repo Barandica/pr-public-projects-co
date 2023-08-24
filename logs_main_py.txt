@@ -2487,3 +2487,370 @@
 [INFO] [2023-08-22 21:16:22,966] [load_BigQuery]: Demoré 183.0 segundos en subir el modelo a BigQuery
 [INFO] [2023-08-22 21:16:22,966] [load_BigQuery]: Demoré 183.0 segundos en subir el modelo a BigQuery
 [INFO] [2023-08-22 21:16:22,966] [general_log]: Demore 18.0 minutos en correr toda la tubería
+[INFO] [2023-08-23 13:08:24,487] [general_log]: --------------------------------------------------------------------------------------------------------------
+[INFO] [2023-08-23 13:09:58,194] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/cf9k-55fw.json
+[INFO] [2023-08-23 13:09:58,194] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/cf9k-55fw.json
+[INFO] [2023-08-23 13:11:41,225] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/uwns-mbwd.json
+[INFO] [2023-08-23 13:11:41,225] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/uwns-mbwd.json
+[INFO] [2023-08-23 13:13:37,632] [general_log]: --------------------------------------------------------------------------------------------------------------
+[INFO] [2023-08-23 13:14:34,835] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/cf9k-55fw.json
+[INFO] [2023-08-23 13:14:34,835] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/cf9k-55fw.json
+[INFO] [2023-08-23 13:16:20,523] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/uwns-mbwd.json
+[INFO] [2023-08-23 13:16:20,523] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/uwns-mbwd.json
+[INFO] [2023-08-23 13:58:22,688] [general_log]: --------------------------------------------------------------------------------------------------------------
+[INFO] [2023-08-23 14:04:20,772] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/cf9k-55fw.json
+[INFO] [2023-08-23 14:04:20,772] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/cf9k-55fw.json
+[INFO] [2023-08-23 14:10:17,731] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/uwns-mbwd.json
+[INFO] [2023-08-23 14:10:17,731] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/uwns-mbwd.json
+[INFO] [2023-08-23 14:13:08,647] [general_log]: --------------------------------------------------------------------------------------------------------------
+[INFO] [2023-08-23 14:13:12,167] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/uwns-mbwd.json
+[INFO] [2023-08-23 14:13:12,167] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/uwns-mbwd.json
+[INFO] [2023-08-23 14:13:13,437] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/cf9k-55fw.json
+[INFO] [2023-08-23 14:13:13,437] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/cf9k-55fw.json
+[INFO] [2023-08-23 14:13:28,992] [extract_load]: Archivo proyectos.json cargado en Cloud Storage con éxito
+[INFO] [2023-08-23 14:13:28,992] [extract_load]: Archivo proyectos.json cargado en Cloud Storage con éxito
+[INFO] [2023-08-23 14:13:41,498] [extract_load]: Archivo contratos.json cargado en Cloud Storage con éxito
+[INFO] [2023-08-23 14:13:41,498] [extract_load]: Archivo contratos.json cargado en Cloud Storage con éxito
+[INFO] [2023-08-23 14:13:41,498] [extract_load]: Demoré 33.0 segundos en extraer desde la API
+[INFO] [2023-08-23 14:13:41,498] [extract_load]: Demoré 33.0 segundos en extraer desde la API
+[INFO] [2023-08-23 14:13:45,421] [transform_extractor]: Archivo proyectos.json descargado de Google Cloud Storage con éxito
+[INFO] [2023-08-23 14:13:45,421] [transform_extractor]: Archivo proyectos.json descargado de Google Cloud Storage con éxito
+[INFO] [2023-08-23 14:13:45,476] [transform_extractor]: Archivo proyectos.json convertido a df con éxito
+[INFO] [2023-08-23 14:13:45,476] [transform_extractor]: Archivo proyectos.json convertido a df con éxito
+[INFO] [2023-08-23 14:13:49,263] [transform_extractor]: Archivo contratos.json descargado de Google Cloud Storage con éxito
+[INFO] [2023-08-23 14:13:49,263] [transform_extractor]: Archivo contratos.json descargado de Google Cloud Storage con éxito
+[INFO] [2023-08-23 14:13:49,295] [transform_extractor]: Archivo contratos.json convertido a df con éxito
+[INFO] [2023-08-23 14:13:49,295] [transform_extractor]: Archivo contratos.json convertido a df con éxito
+[INFO] [2023-08-23 14:13:49,310] [transform_extractor]: Demoré 8.0 segundos en extraer desde la GCS
+[INFO] [2023-08-23 14:13:49,310] [transform_extractor]: Demoré 8.0 segundos en extraer desde la GCS
+[INFO] [2023-08-23 14:13:49,310] [validator_api_gcs]: Los archivos desde la API y GCS son identicos
+[INFO] [2023-08-23 14:13:49,310] [validator_api_gcs]: Los archivos desde la API y GCS son identicos
+[INFO] [2023-08-23 14:13:49,310] [validator_api_gcs]: Demoré 0.0 segundos en comparar los archivos de la API y GCS
+[INFO] [2023-08-23 14:13:49,310] [validator_api_gcs]: Demoré 0.0 segundos en comparar los archivos de la API y GCS
+[INFO] [2023-08-23 14:13:49,352] [clean_up_df_proyectos]: El archivo df_contratos se ha limpiado con éxito
+[INFO] [2023-08-23 14:13:49,352] [clean_up_df_proyectos]: El archivo df_contratos se ha limpiado con éxito
+[INFO] [2023-08-23 14:13:49,352] [clean_up_df_proyectos]: Demoré 0.0 segundos en limpiar el df_proyectos
+[INFO] [2023-08-23 14:13:49,352] [clean_up_df_proyectos]: Demoré 0.0 segundos en limpiar el df_proyectos
+[INFO] [2023-08-23 14:13:49,383] [clean_up_df_contratos]: El archivo df_contratos se ha limpiado con éxito
+[INFO] [2023-08-23 14:13:49,383] [clean_up_df_contratos]: El archivo df_contratos se ha limpiado con éxito
+[INFO] [2023-08-23 14:13:49,383] [clean_up_df_contratos]: Demoré 0.0 segundos en limpiar el df_contratos
+[INFO] [2023-08-23 14:13:49,383] [clean_up_df_contratos]: Demoré 0.0 segundos en limpiar el df_contratos
+[INFO] [2023-08-23 14:13:49,399] [general_log]: Después de la limpieza, los datos mantienen su integridad
+[INFO] [2023-08-23 14:13:49,415] [modeler_df_proyectos]: Se han construido las sub_dimensiones del df_proyecto con éxito
+[INFO] [2023-08-23 14:13:49,415] [modeler_df_proyectos]: Se han construido las sub_dimensiones del df_proyecto con éxito
+[INFO] [2023-08-23 14:13:49,415] [modeler_df_proyectos]: Se ha construido con éxito dim_proyectos
+[INFO] [2023-08-23 14:13:49,415] [modeler_df_proyectos]: Se ha construido con éxito dim_proyectos
+[INFO] [2023-08-23 14:13:49,415] [modeler_df_proyectos]: Demoré 0.0 segundos en modelar el df_proyectos
+[INFO] [2023-08-23 14:13:49,415] [modeler_df_proyectos]: Demoré 0.0 segundos en modelar el df_proyectos
+[INFO] [2023-08-23 14:13:49,430] [modeler_df_contratos]: Se han construido las dimensiones del df_contratos con éxito
+[INFO] [2023-08-23 14:13:49,430] [modeler_df_contratos]: Se han construido las dimensiones del df_contratos con éxito
+[INFO] [2023-08-23 14:13:49,430] [modeler_df_contratos]: Se ha construido fact_contratos con éxito
+[INFO] [2023-08-23 14:13:49,430] [modeler_df_contratos]: Se ha construido fact_contratos con éxito
+[INFO] [2023-08-23 14:13:49,446] [modeler_df_contratos]: Demoré 0.0 segundos en modelar el df_contratos
+[INFO] [2023-08-23 14:13:49,446] [modeler_df_contratos]: Demoré 0.0 segundos en modelar el df_contratos
+[INFO] [2023-08-23 14:13:57,901] [pandas_gbq.gbq]: 404 out of 404 rows loaded.
+[INFO] [2023-08-23 14:13:57,901] [load_BigQuery]: Datos de la tabla dim_pr_entidades cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:13:57,901] [load_BigQuery]: Datos de la tabla dim_pr_entidades cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:14:05,708] [pandas_gbq.gbq]: 27 out of 27 rows loaded.
+[INFO] [2023-08-23 14:14:05,708] [load_BigQuery]: Datos de la tabla dim_pr_sector cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:14:05,708] [load_BigQuery]: Datos de la tabla dim_pr_sector cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:14:21,294] [pandas_gbq.gbq]: 5 out of 5 rows loaded.
+[INFO] [2023-08-23 14:14:21,294] [load_BigQuery]: Datos de la tabla dim_pr_estado cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:14:21,294] [load_BigQuery]: Datos de la tabla dim_pr_estado cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:14:31,450] [pandas_gbq.gbq]: 3 out of 3 rows loaded.
+[INFO] [2023-08-23 14:14:31,450] [load_BigQuery]: Datos de la tabla dim_pr_tipo cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:14:31,450] [load_BigQuery]: Datos de la tabla dim_pr_tipo cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:14:39,605] [pandas_gbq.gbq]: 12 out of 12 rows loaded.
+[INFO] [2023-08-23 14:14:39,605] [load_BigQuery]: Datos de la tabla dim_pr_subestado cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:14:39,605] [load_BigQuery]: Datos de la tabla dim_pr_subestado cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:15:21,432] [pandas_gbq.gbq]: 1000 out of 1000 rows loaded.
+[INFO] [2023-08-23 14:15:21,432] [load_BigQuery]: Datos de la tabla dim_pr_proyecto cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:15:21,432] [load_BigQuery]: Datos de la tabla dim_pr_proyecto cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:15:29,183] [pandas_gbq.gbq]: 3 out of 3 rows loaded.
+[INFO] [2023-08-23 14:15:29,183] [load_BigQuery]: Datos de la tabla dim_ct_tipo_doc cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:15:29,183] [load_BigQuery]: Datos de la tabla dim_ct_tipo_doc cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:15:41,166] [pandas_gbq.gbq]: 629 out of 629 rows loaded.
+[INFO] [2023-08-23 14:15:41,166] [load_BigQuery]: Datos de la tabla dim_ct_proveedor cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:15:41,166] [load_BigQuery]: Datos de la tabla dim_ct_proveedor cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:15:50,130] [pandas_gbq.gbq]: 8 out of 8 rows loaded.
+[INFO] [2023-08-23 14:15:50,130] [load_BigQuery]: Datos de la tabla dim_ct_estado cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:15:50,130] [load_BigQuery]: Datos de la tabla dim_ct_estado cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:16:01,390] [pandas_gbq.gbq]: 999 out of 999 rows loaded.
+[INFO] [2023-08-23 14:16:01,390] [load_BigQuery]: Datos de la tabla fact_contratos cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:16:01,390] [load_BigQuery]: Datos de la tabla fact_contratos cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:16:03,841] [load_BigQuery]: Datos de la tabla errores_proyectos cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:16:03,841] [load_BigQuery]: Datos de la tabla errores_proyectos cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:16:10,812] [pandas_gbq.gbq]: 1 out of 1 rows loaded.
+[INFO] [2023-08-23 14:16:10,812] [load_BigQuery]: Datos de la tabla errores_contratos cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:16:10,812] [load_BigQuery]: Datos de la tabla errores_contratos cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:16:10,812] [load_BigQuery]: Demoré 141.0 segundos en subir el modelo a BigQuery
+[INFO] [2023-08-23 14:16:10,812] [load_BigQuery]: Demoré 141.0 segundos en subir el modelo a BigQuery
+[INFO] [2023-08-23 14:16:10,812] [general_log]: Demore 3.0 minutos en correr toda la tubería
+[INFO] [2023-08-23 14:16:54,104] [general_log]: --------------------------------------------------------------------------------------------------------------
+[INFO] [2023-08-23 14:17:46,472] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/uwns-mbwd.json
+[INFO] [2023-08-23 14:17:46,472] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/uwns-mbwd.json
+[INFO] [2023-08-23 14:18:40,129] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/cf9k-55fw.json
+[INFO] [2023-08-23 14:18:40,129] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/cf9k-55fw.json
+[INFO] [2023-08-23 14:20:15,335] [general_log]: --------------------------------------------------------------------------------------------------------------
+[INFO] [2023-08-23 14:20:43,100] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/uwns-mbwd.json
+[INFO] [2023-08-23 14:20:43,100] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/uwns-mbwd.json
+[INFO] [2023-08-23 14:20:59,457] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/cf9k-55fw.json
+[INFO] [2023-08-23 14:20:59,457] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/cf9k-55fw.json
+[INFO] [2023-08-23 14:22:30,447] [general_log]: --------------------------------------------------------------------------------------------------------------
+[INFO] [2023-08-23 14:22:34,432] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/uwns-mbwd.json
+[INFO] [2023-08-23 14:22:34,432] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/uwns-mbwd.json
+[INFO] [2023-08-23 14:22:34,822] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/cf9k-55fw.json
+[INFO] [2023-08-23 14:22:34,822] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/cf9k-55fw.json
+[INFO] [2023-08-23 14:22:50,465] [extract_load]: Archivo proyectos.json cargado en Cloud Storage con éxito
+[INFO] [2023-08-23 14:22:50,465] [extract_load]: Archivo proyectos.json cargado en Cloud Storage con éxito
+[INFO] [2023-08-23 14:23:02,159] [extract_load]: Archivo contratos.json cargado en Cloud Storage con éxito
+[INFO] [2023-08-23 14:23:02,159] [extract_load]: Archivo contratos.json cargado en Cloud Storage con éxito
+[INFO] [2023-08-23 14:23:02,159] [extract_load]: Demoré 32.0 segundos en extraer desde la API
+[INFO] [2023-08-23 14:23:02,159] [extract_load]: Demoré 32.0 segundos en extraer desde la API
+[INFO] [2023-08-23 14:23:07,685] [transform_extractor]: Archivo proyectos.json descargado de Google Cloud Storage con éxito
+[INFO] [2023-08-23 14:23:07,685] [transform_extractor]: Archivo proyectos.json descargado de Google Cloud Storage con éxito
+[INFO] [2023-08-23 14:23:07,716] [transform_extractor]: Archivo proyectos.json convertido a df con éxito
+[INFO] [2023-08-23 14:23:07,716] [transform_extractor]: Archivo proyectos.json convertido a df con éxito
+[INFO] [2023-08-23 14:23:11,251] [transform_extractor]: Archivo contratos.json descargado de Google Cloud Storage con éxito
+[INFO] [2023-08-23 14:23:11,251] [transform_extractor]: Archivo contratos.json descargado de Google Cloud Storage con éxito
+[INFO] [2023-08-23 14:23:11,267] [transform_extractor]: Archivo contratos.json convertido a df con éxito
+[INFO] [2023-08-23 14:23:11,267] [transform_extractor]: Archivo contratos.json convertido a df con éxito
+[INFO] [2023-08-23 14:23:11,282] [transform_extractor]: Demoré 9.0 segundos en extraer desde la GCS
+[INFO] [2023-08-23 14:23:11,282] [transform_extractor]: Demoré 9.0 segundos en extraer desde la GCS
+[INFO] [2023-08-23 14:23:11,282] [validator_api_gcs]: Los archivos desde la API y GCS son identicos
+[INFO] [2023-08-23 14:23:11,282] [validator_api_gcs]: Los archivos desde la API y GCS son identicos
+[INFO] [2023-08-23 14:23:11,282] [validator_api_gcs]: Demoré 0.0 segundos en comparar los archivos de la API y GCS
+[INFO] [2023-08-23 14:23:11,282] [validator_api_gcs]: Demoré 0.0 segundos en comparar los archivos de la API y GCS
+[INFO] [2023-08-23 14:23:11,298] [clean_up_df_proyectos]: El archivo df_contratos se ha limpiado con éxito
+[INFO] [2023-08-23 14:23:11,298] [clean_up_df_proyectos]: El archivo df_contratos se ha limpiado con éxito
+[INFO] [2023-08-23 14:23:11,298] [clean_up_df_proyectos]: Demoré 0.0 segundos en limpiar el df_proyectos
+[INFO] [2023-08-23 14:23:11,298] [clean_up_df_proyectos]: Demoré 0.0 segundos en limpiar el df_proyectos
+[INFO] [2023-08-23 14:23:11,329] [clean_up_df_contratos]: El archivo df_contratos se ha limpiado con éxito
+[INFO] [2023-08-23 14:23:11,329] [clean_up_df_contratos]: El archivo df_contratos se ha limpiado con éxito
+[INFO] [2023-08-23 14:23:11,329] [clean_up_df_contratos]: Demoré 0.0 segundos en limpiar el df_contratos
+[INFO] [2023-08-23 14:23:11,329] [clean_up_df_contratos]: Demoré 0.0 segundos en limpiar el df_contratos
+[INFO] [2023-08-23 14:23:11,329] [general_log]: Después de la limpieza, los datos mantienen su integridad
+[INFO] [2023-08-23 14:23:11,329] [modeler_df_proyectos]: Se han construido las sub_dimensiones del df_proyecto con éxito
+[INFO] [2023-08-23 14:23:11,329] [modeler_df_proyectos]: Se han construido las sub_dimensiones del df_proyecto con éxito
+[INFO] [2023-08-23 14:23:11,345] [modeler_df_proyectos]: Se ha construido con éxito dim_proyectos
+[INFO] [2023-08-23 14:23:11,345] [modeler_df_proyectos]: Se ha construido con éxito dim_proyectos
+[INFO] [2023-08-23 14:23:11,345] [modeler_df_proyectos]: Demoré 0.0 segundos en modelar el df_proyectos
+[INFO] [2023-08-23 14:23:11,345] [modeler_df_proyectos]: Demoré 0.0 segundos en modelar el df_proyectos
+[INFO] [2023-08-23 14:23:11,345] [modeler_df_contratos]: Se han construido las dimensiones del df_contratos con éxito
+[INFO] [2023-08-23 14:23:11,345] [modeler_df_contratos]: Se han construido las dimensiones del df_contratos con éxito
+[INFO] [2023-08-23 14:23:11,361] [modeler_df_contratos]: Se ha construido fact_contratos con éxito
+[INFO] [2023-08-23 14:23:11,361] [modeler_df_contratos]: Se ha construido fact_contratos con éxito
+[INFO] [2023-08-23 14:23:11,361] [modeler_df_contratos]: Demoré 0.0 segundos en modelar el df_contratos
+[INFO] [2023-08-23 14:23:11,361] [modeler_df_contratos]: Demoré 0.0 segundos en modelar el df_contratos
+[INFO] [2023-08-23 14:23:19,584] [pandas_gbq.gbq]: 405 out of 405 rows loaded.
+[INFO] [2023-08-23 14:23:19,584] [load_BigQuery]: Datos de la tabla dim_pr_entidades cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:23:19,584] [load_BigQuery]: Datos de la tabla dim_pr_entidades cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:23:26,629] [pandas_gbq.gbq]: 27 out of 27 rows loaded.
+[INFO] [2023-08-23 14:23:26,629] [load_BigQuery]: Datos de la tabla dim_pr_sector cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:23:26,629] [load_BigQuery]: Datos de la tabla dim_pr_sector cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:23:35,536] [pandas_gbq.gbq]: 5 out of 5 rows loaded.
+[INFO] [2023-08-23 14:23:35,536] [load_BigQuery]: Datos de la tabla dim_pr_estado cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:23:35,536] [load_BigQuery]: Datos de la tabla dim_pr_estado cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:23:42,487] [pandas_gbq.gbq]: 3 out of 3 rows loaded.
+[INFO] [2023-08-23 14:23:42,487] [load_BigQuery]: Datos de la tabla dim_pr_tipo cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:23:42,487] [load_BigQuery]: Datos de la tabla dim_pr_tipo cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:23:50,497] [pandas_gbq.gbq]: 12 out of 12 rows loaded.
+[INFO] [2023-08-23 14:23:50,497] [load_BigQuery]: Datos de la tabla dim_pr_subestado cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:23:50,497] [load_BigQuery]: Datos de la tabla dim_pr_subestado cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:23:58,539] [pandas_gbq.gbq]: 1000 out of 1000 rows loaded.
+[INFO] [2023-08-23 14:23:58,539] [load_BigQuery]: Datos de la tabla dim_pr_proyecto cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:23:58,539] [load_BigQuery]: Datos de la tabla dim_pr_proyecto cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:24:04,752] [pandas_gbq.gbq]: 3 out of 3 rows loaded.
+[INFO] [2023-08-23 14:24:04,752] [load_BigQuery]: Datos de la tabla dim_ct_tipo_doc cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:24:04,752] [load_BigQuery]: Datos de la tabla dim_ct_tipo_doc cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:24:10,472] [pandas_gbq.gbq]: 629 out of 629 rows loaded.
+[INFO] [2023-08-23 14:24:10,472] [load_BigQuery]: Datos de la tabla dim_ct_proveedor cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:24:10,472] [load_BigQuery]: Datos de la tabla dim_ct_proveedor cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:24:16,918] [pandas_gbq.gbq]: 8 out of 8 rows loaded.
+[INFO] [2023-08-23 14:24:16,918] [load_BigQuery]: Datos de la tabla dim_ct_estado cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:24:16,918] [load_BigQuery]: Datos de la tabla dim_ct_estado cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:24:24,998] [pandas_gbq.gbq]: 999 out of 999 rows loaded.
+[INFO] [2023-08-23 14:24:24,998] [load_BigQuery]: Datos de la tabla fact_contratos cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:24:24,998] [load_BigQuery]: Datos de la tabla fact_contratos cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:24:26,842] [load_BigQuery]: Datos de la tabla errores_proyectos cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:24:26,842] [load_BigQuery]: Datos de la tabla errores_proyectos cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:24:33,954] [pandas_gbq.gbq]: 1 out of 1 rows loaded.
+[INFO] [2023-08-23 14:24:33,954] [load_BigQuery]: Datos de la tabla errores_contratos cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:24:33,954] [load_BigQuery]: Datos de la tabla errores_contratos cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:24:33,954] [load_BigQuery]: Demoré 83.0 segundos en subir el modelo a BigQuery
+[INFO] [2023-08-23 14:24:33,954] [load_BigQuery]: Demoré 83.0 segundos en subir el modelo a BigQuery
+[INFO] [2023-08-23 14:24:33,954] [general_log]: Demore 2.0 minutos en correr toda la tubería
+[INFO] [2023-08-23 14:33:04,850] [general_log]: --------------------------------------------------------------------------------------------------------------
+[INFO] [2023-08-23 14:34:50,270] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/uwns-mbwd.json
+[INFO] [2023-08-23 14:34:50,270] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/uwns-mbwd.json
+[INFO] [2023-08-23 14:35:27,936] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/cf9k-55fw.json
+[INFO] [2023-08-23 14:35:27,936] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/cf9k-55fw.json
+[INFO] [2023-08-23 14:37:08,051] [general_log]: --------------------------------------------------------------------------------------------------------------
+[INFO] [2023-08-23 14:37:10,345] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/uwns-mbwd.json
+[INFO] [2023-08-23 14:37:10,345] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/uwns-mbwd.json
+[INFO] [2023-08-23 14:37:10,838] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/cf9k-55fw.json
+[INFO] [2023-08-23 14:37:10,838] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/cf9k-55fw.json
+[INFO] [2023-08-23 14:37:26,759] [extract_load]: Archivo proyectos.json cargado en Cloud Storage con éxito
+[INFO] [2023-08-23 14:37:26,759] [extract_load]: Archivo proyectos.json cargado en Cloud Storage con éxito
+[INFO] [2023-08-23 14:37:39,460] [extract_load]: Archivo contratos.json cargado en Cloud Storage con éxito
+[INFO] [2023-08-23 14:37:39,460] [extract_load]: Archivo contratos.json cargado en Cloud Storage con éxito
+[INFO] [2023-08-23 14:37:39,460] [extract_load]: Demoré 31.0 segundos en extraer desde la API
+[INFO] [2023-08-23 14:37:39,460] [extract_load]: Demoré 31.0 segundos en extraer desde la API
+[INFO] [2023-08-23 14:37:43,240] [transform_extractor]: Archivo proyectos.json descargado de Google Cloud Storage con éxito
+[INFO] [2023-08-23 14:37:43,240] [transform_extractor]: Archivo proyectos.json descargado de Google Cloud Storage con éxito
+[INFO] [2023-08-23 14:37:43,281] [transform_extractor]: Archivo proyectos.json convertido a df con éxito
+[INFO] [2023-08-23 14:37:43,281] [transform_extractor]: Archivo proyectos.json convertido a df con éxito
+[INFO] [2023-08-23 14:37:46,422] [transform_extractor]: Archivo contratos.json descargado de Google Cloud Storage con éxito
+[INFO] [2023-08-23 14:37:46,422] [transform_extractor]: Archivo contratos.json descargado de Google Cloud Storage con éxito
+[INFO] [2023-08-23 14:37:46,454] [transform_extractor]: Archivo contratos.json convertido a df con éxito
+[INFO] [2023-08-23 14:37:46,454] [transform_extractor]: Archivo contratos.json convertido a df con éxito
+[INFO] [2023-08-23 14:37:46,454] [transform_extractor]: Demoré 7.0 segundos en extraer desde la GCS
+[INFO] [2023-08-23 14:37:46,454] [transform_extractor]: Demoré 7.0 segundos en extraer desde la GCS
+[INFO] [2023-08-23 14:37:46,454] [validator_api_gcs]: Los archivos desde la API y GCS son identicos
+[INFO] [2023-08-23 14:37:46,454] [validator_api_gcs]: Los archivos desde la API y GCS son identicos
+[INFO] [2023-08-23 14:37:46,462] [validator_api_gcs]: Demoré 0.0 segundos en comparar los archivos de la API y GCS
+[INFO] [2023-08-23 14:37:46,462] [validator_api_gcs]: Demoré 0.0 segundos en comparar los archivos de la API y GCS
+[INFO] [2023-08-23 14:37:46,486] [clean_up_df_proyectos]: El archivo df_contratos se ha limpiado con éxito
+[INFO] [2023-08-23 14:37:46,486] [clean_up_df_proyectos]: El archivo df_contratos se ha limpiado con éxito
+[INFO] [2023-08-23 14:37:46,486] [clean_up_df_proyectos]: Demoré 0.0 segundos en limpiar el df_proyectos
+[INFO] [2023-08-23 14:37:46,486] [clean_up_df_proyectos]: Demoré 0.0 segundos en limpiar el df_proyectos
+[INFO] [2023-08-23 14:37:46,510] [clean_up_df_contratos]: El archivo df_contratos se ha limpiado con éxito
+[INFO] [2023-08-23 14:37:46,510] [clean_up_df_contratos]: El archivo df_contratos se ha limpiado con éxito
+[INFO] [2023-08-23 14:37:46,510] [clean_up_df_contratos]: Demoré 0.0 segundos en limpiar el df_contratos
+[INFO] [2023-08-23 14:37:46,510] [clean_up_df_contratos]: Demoré 0.0 segundos en limpiar el df_contratos
+[INFO] [2023-08-23 14:37:46,510] [general_log]: Después de la limpieza, los datos mantienen su integridad
+[INFO] [2023-08-23 14:37:46,518] [modeler_df_proyectos]: Se han construido las sub_dimensiones del df_proyecto con éxito
+[INFO] [2023-08-23 14:37:46,518] [modeler_df_proyectos]: Se han construido las sub_dimensiones del df_proyecto con éxito
+[INFO] [2023-08-23 14:37:46,526] [modeler_df_proyectos]: Se ha construido con éxito dim_proyectos
+[INFO] [2023-08-23 14:37:46,526] [modeler_df_proyectos]: Se ha construido con éxito dim_proyectos
+[INFO] [2023-08-23 14:37:46,526] [modeler_df_proyectos]: Demoré 0.0 segundos en modelar el df_proyectos
+[INFO] [2023-08-23 14:37:46,526] [modeler_df_proyectos]: Demoré 0.0 segundos en modelar el df_proyectos
+[INFO] [2023-08-23 14:37:46,534] [modeler_df_contratos]: Se han construido las dimensiones del df_contratos con éxito
+[INFO] [2023-08-23 14:37:46,534] [modeler_df_contratos]: Se han construido las dimensiones del df_contratos con éxito
+[INFO] [2023-08-23 14:37:46,542] [modeler_df_contratos]: Se ha construido fact_contratos con éxito
+[INFO] [2023-08-23 14:37:46,542] [modeler_df_contratos]: Se ha construido fact_contratos con éxito
+[INFO] [2023-08-23 14:37:46,542] [modeler_df_contratos]: Demoré 0.0 segundos en modelar el df_contratos
+[INFO] [2023-08-23 14:37:46,542] [modeler_df_contratos]: Demoré 0.0 segundos en modelar el df_contratos
+[INFO] [2023-08-23 14:37:54,214] [pandas_gbq.gbq]: 404 out of 404 rows loaded.
+[INFO] [2023-08-23 14:37:54,214] [load_BigQuery]: Datos de la tabla dim_pr_entidades cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:37:54,214] [load_BigQuery]: Datos de la tabla dim_pr_entidades cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:38:02,871] [pandas_gbq.gbq]: 27 out of 27 rows loaded.
+[INFO] [2023-08-23 14:38:02,871] [load_BigQuery]: Datos de la tabla dim_pr_sector cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:38:02,871] [load_BigQuery]: Datos de la tabla dim_pr_sector cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:38:10,371] [pandas_gbq.gbq]: 5 out of 5 rows loaded.
+[INFO] [2023-08-23 14:38:10,371] [load_BigQuery]: Datos de la tabla dim_pr_estado cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:38:10,371] [load_BigQuery]: Datos de la tabla dim_pr_estado cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:38:17,225] [pandas_gbq.gbq]: 3 out of 3 rows loaded.
+[INFO] [2023-08-23 14:38:17,225] [load_BigQuery]: Datos de la tabla dim_pr_tipo cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:38:17,225] [load_BigQuery]: Datos de la tabla dim_pr_tipo cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:38:23,984] [pandas_gbq.gbq]: 12 out of 12 rows loaded.
+[INFO] [2023-08-23 14:38:23,984] [load_BigQuery]: Datos de la tabla dim_pr_subestado cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:38:23,984] [load_BigQuery]: Datos de la tabla dim_pr_subestado cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:38:33,864] [pandas_gbq.gbq]: 1000 out of 1000 rows loaded.
+[INFO] [2023-08-23 14:38:33,864] [load_BigQuery]: Datos de la tabla dim_pr_proyecto cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:38:33,864] [load_BigQuery]: Datos de la tabla dim_pr_proyecto cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:38:40,477] [pandas_gbq.gbq]: 3 out of 3 rows loaded.
+[INFO] [2023-08-23 14:38:40,477] [load_BigQuery]: Datos de la tabla dim_ct_tipo_doc cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:38:40,477] [load_BigQuery]: Datos de la tabla dim_ct_tipo_doc cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:38:47,031] [pandas_gbq.gbq]: 629 out of 629 rows loaded.
+[INFO] [2023-08-23 14:38:47,032] [load_BigQuery]: Datos de la tabla dim_ct_proveedor cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:38:47,032] [load_BigQuery]: Datos de la tabla dim_ct_proveedor cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:38:52,478] [pandas_gbq.gbq]: 8 out of 8 rows loaded.
+[INFO] [2023-08-23 14:38:52,478] [load_BigQuery]: Datos de la tabla dim_ct_estado cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:38:52,478] [load_BigQuery]: Datos de la tabla dim_ct_estado cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:39:02,528] [pandas_gbq.gbq]: 999 out of 999 rows loaded.
+[INFO] [2023-08-23 14:39:02,528] [load_BigQuery]: Datos de la tabla fact_contratos cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:39:02,528] [load_BigQuery]: Datos de la tabla fact_contratos cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:39:06,277] [load_BigQuery]: Datos de la tabla errores_proyectos cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:39:06,277] [load_BigQuery]: Datos de la tabla errores_proyectos cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:39:14,127] [pandas_gbq.gbq]: 1 out of 1 rows loaded.
+[INFO] [2023-08-23 14:39:14,135] [load_BigQuery]: Datos de la tabla errores_contratos cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:39:14,135] [load_BigQuery]: Datos de la tabla errores_contratos cargados correctamente en BigQuery
+[INFO] [2023-08-23 14:39:14,135] [load_BigQuery]: Demoré 88.0 segundos en subir el modelo a BigQuery
+[INFO] [2023-08-23 14:39:14,135] [load_BigQuery]: Demoré 88.0 segundos en subir el modelo a BigQuery
+[INFO] [2023-08-23 14:39:14,135] [general_log]: Demore 2.0 minutos en correr toda la tubería
+[INFO] [2023-08-24 09:32:38,201] [general_log]: --------------------------------------------------------------------------------------------------------------
+[INFO] [2023-08-24 09:33:30,014] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/cf9k-55fw.json
+[INFO] [2023-08-24 09:33:30,014] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/cf9k-55fw.json
+[INFO] [2023-08-24 09:35:22,721] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/uwns-mbwd.json
+[INFO] [2023-08-24 09:35:22,721] [extract_load]: Se han obtenido correctamente los datos desde la API https://www.datos.gov.co/resource/uwns-mbwd.json
+[INFO] [2023-08-24 09:37:19,555] [extract_load]: Archivo proyectos.json cargado en Cloud Storage con éxito
+[INFO] [2023-08-24 09:37:19,555] [extract_load]: Archivo proyectos.json cargado en Cloud Storage con éxito
+[INFO] [2023-08-24 09:42:34,717] [extract_load]: Archivo contratos.json cargado en Cloud Storage con éxito
+[INFO] [2023-08-24 09:42:34,717] [extract_load]: Archivo contratos.json cargado en Cloud Storage con éxito
+[INFO] [2023-08-24 09:42:34,746] [extract_load]: Demoré 597.0 segundos en extraer desde la API
+[INFO] [2023-08-24 09:42:34,746] [extract_load]: Demoré 597.0 segundos en extraer desde la API
+[INFO] [2023-08-24 09:43:15,000] [transform_extractor]: Archivo proyectos.json descargado de Google Cloud Storage con éxito
+[INFO] [2023-08-24 09:43:15,000] [transform_extractor]: Archivo proyectos.json descargado de Google Cloud Storage con éxito
+[INFO] [2023-08-24 09:43:23,449] [transform_extractor]: Archivo proyectos.json convertido a df con éxito
+[INFO] [2023-08-24 09:43:23,449] [transform_extractor]: Archivo proyectos.json convertido a df con éxito
+[INFO] [2023-08-24 09:45:05,064] [transform_extractor]: Archivo contratos.json descargado de Google Cloud Storage con éxito
+[INFO] [2023-08-24 09:45:05,064] [transform_extractor]: Archivo contratos.json descargado de Google Cloud Storage con éxito
+[INFO] [2023-08-24 09:45:39,695] [transform_extractor]: Archivo contratos.json convertido a df con éxito
+[INFO] [2023-08-24 09:45:39,695] [transform_extractor]: Archivo contratos.json convertido a df con éxito
+[INFO] [2023-08-24 09:45:39,754] [transform_extractor]: Demoré 185.0 segundos en extraer desde la GCS
+[INFO] [2023-08-24 09:45:39,754] [transform_extractor]: Demoré 185.0 segundos en extraer desde la GCS
+[INFO] [2023-08-24 09:45:39,764] [validator_api_gcs]: Los archivos desde la API y GCS son identicos
+[INFO] [2023-08-24 09:45:39,764] [validator_api_gcs]: Los archivos desde la API y GCS son identicos
+[INFO] [2023-08-24 09:45:39,764] [validator_api_gcs]: Demoré 0.0 segundos en comparar los archivos de la API y GCS
+[INFO] [2023-08-24 09:45:39,764] [validator_api_gcs]: Demoré 0.0 segundos en comparar los archivos de la API y GCS
+[INFO] [2023-08-24 09:45:46,902] [clean_up_df_proyectos]: El archivo df_contratos se ha limpiado con éxito
+[INFO] [2023-08-24 09:45:46,902] [clean_up_df_proyectos]: El archivo df_contratos se ha limpiado con éxito
+[INFO] [2023-08-24 09:45:46,907] [clean_up_df_proyectos]: Demoré 7.0 segundos en limpiar el df_proyectos
+[INFO] [2023-08-24 09:45:46,907] [clean_up_df_proyectos]: Demoré 7.0 segundos en limpiar el df_proyectos
+[INFO] [2023-08-24 09:45:53,992] [clean_up_df_contratos]: El archivo df_contratos se ha limpiado con éxito
+[INFO] [2023-08-24 09:45:53,992] [clean_up_df_contratos]: El archivo df_contratos se ha limpiado con éxito
+[INFO] [2023-08-24 09:45:53,998] [clean_up_df_contratos]: Demoré 7.0 segundos en limpiar el df_contratos
+[INFO] [2023-08-24 09:45:53,998] [clean_up_df_contratos]: Demoré 7.0 segundos en limpiar el df_contratos
+[INFO] [2023-08-24 09:45:54,000] [general_log]: Después de la limpieza, los datos mantienen su integridad
+[INFO] [2023-08-24 09:45:54,923] [modeler_df_proyectos]: Se han construido las sub_dimensiones del df_proyecto con éxito
+[INFO] [2023-08-24 09:45:54,923] [modeler_df_proyectos]: Se han construido las sub_dimensiones del df_proyecto con éxito
+[INFO] [2023-08-24 09:45:55,153] [modeler_df_proyectos]: Se ha construido con éxito dim_proyectos
+[INFO] [2023-08-24 09:45:55,153] [modeler_df_proyectos]: Se ha construido con éxito dim_proyectos
+[INFO] [2023-08-24 09:45:55,153] [modeler_df_proyectos]: Demoré 1.0 segundos en modelar el df_proyectos
+[INFO] [2023-08-24 09:45:55,153] [modeler_df_proyectos]: Demoré 1.0 segundos en modelar el df_proyectos
+[INFO] [2023-08-24 09:45:56,062] [modeler_df_contratos]: Se han construido las dimensiones del df_contratos con éxito
+[INFO] [2023-08-24 09:45:56,062] [modeler_df_contratos]: Se han construido las dimensiones del df_contratos con éxito
+[INFO] [2023-08-24 09:45:56,262] [modeler_df_contratos]: Se ha construido fact_contratos con éxito
+[INFO] [2023-08-24 09:45:56,262] [modeler_df_contratos]: Se ha construido fact_contratos con éxito
+[INFO] [2023-08-24 09:45:56,262] [modeler_df_contratos]: Demoré 1.0 segundos en modelar el df_contratos
+[INFO] [2023-08-24 09:45:56,262] [modeler_df_contratos]: Demoré 1.0 segundos en modelar el df_contratos
+[INFO] [2023-08-24 09:46:06,019] [pandas_gbq.gbq]: 3875 out of 3875 rows loaded.
+[INFO] [2023-08-24 09:46:06,019] [load_BigQuery]: Datos de la tabla dim_pr_entidades cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:46:06,019] [load_BigQuery]: Datos de la tabla dim_pr_entidades cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:46:12,660] [pandas_gbq.gbq]: 29 out of 29 rows loaded.
+[INFO] [2023-08-24 09:46:12,660] [load_BigQuery]: Datos de la tabla dim_pr_sector cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:46:12,660] [load_BigQuery]: Datos de la tabla dim_pr_sector cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:46:20,139] [pandas_gbq.gbq]: 8 out of 8 rows loaded.
+[INFO] [2023-08-24 09:46:20,139] [load_BigQuery]: Datos de la tabla dim_pr_estado cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:46:20,139] [load_BigQuery]: Datos de la tabla dim_pr_estado cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:46:27,112] [pandas_gbq.gbq]: 3 out of 3 rows loaded.
+[INFO] [2023-08-24 09:46:27,112] [load_BigQuery]: Datos de la tabla dim_pr_tipo cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:46:27,112] [load_BigQuery]: Datos de la tabla dim_pr_tipo cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:46:35,393] [pandas_gbq.gbq]: 22 out of 22 rows loaded.
+[INFO] [2023-08-24 09:46:35,393] [load_BigQuery]: Datos de la tabla dim_pr_subestado cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:46:35,393] [load_BigQuery]: Datos de la tabla dim_pr_subestado cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:47:16,349] [pandas_gbq.gbq]: 369697 out of 369697 rows loaded.
+[INFO] [2023-08-24 09:47:16,349] [load_BigQuery]: Datos de la tabla dim_pr_proyecto cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:47:16,349] [load_BigQuery]: Datos de la tabla dim_pr_proyecto cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:47:24,644] [pandas_gbq.gbq]: 15 out of 15 rows loaded.
+[INFO] [2023-08-24 09:47:24,644] [load_BigQuery]: Datos de la tabla dim_ct_tipo_doc cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:47:24,644] [load_BigQuery]: Datos de la tabla dim_ct_tipo_doc cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:48:10,092] [pandas_gbq.gbq]: 454213 out of 454213 rows loaded.
+[INFO] [2023-08-24 09:48:10,092] [load_BigQuery]: Datos de la tabla dim_ct_proveedor cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:48:10,092] [load_BigQuery]: Datos de la tabla dim_ct_proveedor cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:48:16,868] [pandas_gbq.gbq]: 10 out of 10 rows loaded.
+[INFO] [2023-08-24 09:48:16,868] [load_BigQuery]: Datos de la tabla dim_ct_estado cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:48:16,868] [load_BigQuery]: Datos de la tabla dim_ct_estado cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:49:17,590] [pandas_gbq.gbq]: 1161741 out of 1161741 rows loaded.
+[INFO] [2023-08-24 09:49:17,590] [load_BigQuery]: Datos de la tabla fact_contratos cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:49:17,590] [load_BigQuery]: Datos de la tabla fact_contratos cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:49:23,835] [pandas_gbq.gbq]: 8 out of 8 rows loaded.
+[INFO] [2023-08-24 09:49:23,857] [load_BigQuery]: Datos de la tabla errores_proyectos cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:49:23,857] [load_BigQuery]: Datos de la tabla errores_proyectos cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:49:32,746] [pandas_gbq.gbq]: 2405 out of 2405 rows loaded.
+[INFO] [2023-08-24 09:49:32,746] [load_BigQuery]: Datos de la tabla errores_contratos cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:49:32,746] [load_BigQuery]: Datos de la tabla errores_contratos cargados correctamente en BigQuery
+[INFO] [2023-08-24 09:49:32,762] [load_BigQuery]: Demoré 216.0 segundos en subir el modelo a BigQuery
+[INFO] [2023-08-24 09:49:32,762] [load_BigQuery]: Demoré 216.0 segundos en subir el modelo a BigQuery
+[INFO] [2023-08-24 09:49:32,772] [general_log]: Demore 17.0 minutos en correr toda la tubería
